@@ -1,0 +1,310 @@
+/* Reset and base styles */
+body {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Sets base font */
+    background: #232c3b; /* Dimmed grey-blue background */
+    color: #222; /* Default text color */
+    min-height: 100vh; /* Ensures body takes at least full viewport height */
+    transition: background 0.5s; /* Smooth background color transition */
+}
+
+header {
+    background: linear-gradient(90deg, #1a2333 0%, #2e294e 100%); /* Gradient header background */
+    color: #fff; /* Header text color */
+    padding: 40px 0 20px 0; /* Top, right/left, bottom padding */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* Subtle shadow under header */
+    animation: fadeInDown 1s; /* Fade in animation from top */
+}
+
+header .container {
+    max-width: 900px; /* Max width for header content */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 20px; /* Side padding */
+    text-align: center; /* Center text */
+}
+
+h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 2.8rem; /* Large heading */
+    letter-spacing: 2px; /* Spacing between letters */
+    animation: fadeInLeft 1s; /* Fade in from left */
+}
+
+h2 {
+    margin: 10px 0 0 0; /* Top margin, no sides/bottom */
+    font-weight: 400; /* Normal font weight */
+    font-size: 1.5rem; /* Medium heading */
+    letter-spacing: 1px; /* Spacing between letters */
+    color: #e0e0e0; /* Lighter color */
+    animation: fadeInLeft 1.2s; /* Fade in from left */
+}
+
+nav {
+    margin-top: 20px; /* Space above nav */
+    animation: fadeIn 1.5s; /* Fade in animation */
+}
+
+nav a {
+    color: #fff; /* Link color */
+    text-decoration: none; /* No underline */
+    margin: 0 18px; /* Horizontal spacing */
+    font-weight: 500; /* Medium bold */
+    font-size: 1.1rem; /* Slightly larger text */
+    position: relative; /* For underline effect */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav a::after {
+    content: ''; /* Decorative underline */
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: width 0.3s; /* Smooth underline grow */
+    margin: 0 auto;
+}
+
+nav a:hover {
+    color: #ffd700; /* Gold on hover */
+}
+
+nav a:hover::after {
+    width: 100%; /* Underline expands on hover */
+}
+
+main .container {
+    max-width: 900px; /* Max width for main content */
+    margin: 0 auto; /* Center horizontally */
+    padding: 40px 20px 0 20px; /* Top, sides, no bottom */
+}
+
+#hero {
+    padding: 60px 0 40px 0; /* Top, sides, bottom padding */
+    text-align: center; /* Center text */
+    animation: fadeIn 1.5s; /* Fade in animation */
+}
+
+#hero p {
+    font-size: 1.3rem; /* Larger paragraph */
+    margin-bottom: 30px; /* Space below */
+    color: #ffffff; /* Darker text */
+    animation: fadeInUp 1.2s; /* Fade in from below */
+}
+
+.button {
+    display: inline-block; /* Allows padding/margin */
+    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); /* Button gradient */
+    color: #fff; /* Button text color */
+    padding: 14px 36px; /* Button padding */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 1.1rem; /* Button text size */
+    font-weight: 600; /* Bold text */
+    text-decoration: none; /* No underline */
+    box-shadow: 0 4px 16px rgba(67,206,162,0.15); /* Subtle shadow */
+    transition: background 0.4s, transform 0.2s, box-shadow 0.3s; /* Smooth transitions */
+    animation: fadeInUp 1.4s; /* Fade in from below */
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%); /* Reverse gradient on hover */
+    transform: translateY(-3px) scale(1.04); /* Slight lift and scale */
+    box-shadow: 0 8px 24px rgba(67,206,162,0.18); /* Larger shadow */
+}
+
+#projects {
+    margin-top: 40px; /* Space above projects */
+    animation: fadeIn 1.7s; /* Fade in animation */
+    background: linear-gradient(120deg, #b3bed2 0%, #8fa1c7 100%); /* Dimmer blue-grey */
+    border-radius: 18px; /* Rounded corners for section */
+    padding: 32px 0; /* Padding inside section */
+}
+
+#projects h3 {
+    text-align: center; /* Center heading */
+    font-size: 2rem; /* Large heading */
+    margin-bottom: 30px; /* Space below */
+    color: #2b5876; /* Blue color */
+    animation: fadeInLeft 1.8s; /* Fade in from left */
+}
+
+.project-list {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 28px; /* Space between items */
+}
+
+@media (min-width: 700px) {
+    .project-list {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns on wide screens */
+    }
+}
+
+.project-list li {
+    background: #fff; /* White background */
+    border-radius: 16px; /* Rounded corners */
+    box-shadow: 0 2px 12px rgba(46, 54, 80, 0.07); /* Subtle shadow */
+    padding: 28px 20px; /* Padding inside */
+    text-align: left; /* Left align text */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1.2s forwards; /* Fade in from below */
+    animation-delay: 0.5s; /* Delay animation */
+}
+
+.project-list li:hover {
+    transform: translateY(-8px) scale(1.03); /* Lift and scale on hover */
+    box-shadow: 0 8px 32px rgba(46, 54, 80, 0.13); /* Larger shadow */
+}
+
+.project-list h4 {
+    margin-top: 0; /* Remove top margin */
+    color: #185a9d; /* Blue heading */
+    font-size: 1.2rem; /* Medium heading */
+    margin-bottom: 10px; /* Space below */
+}
+
+.project-list p {
+    color: #444; /* Darker text */
+    margin-bottom: 16px; /* Space below */
+}
+
+.project-list a {
+    color: #43cea2; /* Green link */
+    text-decoration: none; /* No underline */
+    font-weight: 600; /* Bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.project-list a:hover {
+    color: #185a9d; /* Blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+#about {
+    margin-top: 60px; /* Space above */
+    background: #232c3b; /* Dimmed dark blue */
+    border-radius: 16px; /* Rounded corners */
+    padding: 36px 20px; /* Padding inside */
+    animation: fadeIn 2s; /* Fade in animation */
+    color: #e3eaf6; /* Dimmed light text */
+}
+
+#about h3 {
+    color: #bfcbe6; /* Dimmed heading */
+    margin-top: 0;
+    font-size: 1.7rem;
+    animation: fadeInLeft 2.1s;
+}
+
+#about p {
+    color: #dbe3f3; /* Dimmed paragraph text */
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    animation: fadeInUp 2.2s;
+}
+
+footer {
+    background: #1a2333;
+    color: #e3eaf6;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    animation: fadeInUp 2.5s;
+    width: 100%;
+    margin-top: 0;
+    position: static;
+    left: unset;
+    bottom: unset;
+    z-index: unset;
+}
+
+/* Style for contact form */
+form {
+    max-width: 400px; /* Limit form width */
+    margin: 40px auto 0 auto; /* Center form horizontally with space above */
+    background: #e6eaf2; /* Dimmed light background */
+    padding: 32px 28px; /* Padding inside form */
+    border-radius: 18px; /* Rounded corners */
+    box-shadow: 0 2px 16px rgba(46, 54, 80, 0.08); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text inside form */
+    animation: fadeInUp 1.5s; /* Fade in from below */
+}
+
+form label {
+    font-size: 1.15rem; /* Larger label text */
+    font-weight: 600; /* Bolder label */
+    margin-bottom: 6px;
+    color: #2b5876;
+    align-self: flex-start;
+    text-align: center; /* Center label text */
+    animation: fadeInLeft 1.5s; /* Fade in from left */
+}
+
+form input,
+form textarea {
+    width: 100%;
+    font-size: 1.08rem; /* Larger input text */
+    font-weight: 500; /* Slightly bolder input text */
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #b3c6e0;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+    font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    border: 1.5px solid #185a9d;
+    outline: none;
+}
+
+form .button,
+form button {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 12px 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#contact-info {
+    color: #f4f8ff; /* Lighter font color for better legibility */
+    transition: color 0.4s; /* Smooth color transition */
+    text-align: center; /* Center align all text and content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Start fully transparent */
+    to { opacity: 1; }   /* End fully opaque */
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px);} /* Start transparent and shifted down */
+    to { opacity: 1; transform: translateY(0);}      /* End opaque and in place */
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px);} /* Start transparent and shifted up */
+    to { opacity: 1; transform: translateY(0);}       /* End opaque and in place */
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px);} /* Start transparent and shifted left */
+    to { opacity: 1; transform: translateX(0);}       /* End opaque and in place */
+}
